@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroQuest - Trắc Nghiệm AI Dành Cho Nhân Viên Phòng Vé</title>
+    
+    <!-- SEO & Share Optimization -->
+    <meta name="description" content="Nắm vững kỹ năng ứng dụng AI (ChatGPT/Gemini) vào công việc phòng vé với 10 thử thách thực chiến!">
+    <meta property="og:title" content="AeroQuest - Bậc Thầy AI Phòng Vé">
+    <meta property="og:description" content="Thử thách 10 câu hỏi đo lường kỹ năng ứng dụng AI trong chăm sóc khách hàng và marketing hàng không!">
+    <meta property="og:type" content="website">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-button:hover {
+            box-shadow: 0 0 18px rgba(56, 189, 248, 0.45);
+        }
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus {
+            -webkit-text-fill-color: #ffffff !important;
+            -webkit-box-shadow: 0 0 0px 1000px #090d16 inset !important;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    </style>
+</head>
+<body class="min-h-screen text-slate-100 flex flex-col justify-between overflow-x-hidden p-4">
+
+    <!-- Header -->
+    <header class="w-full max-w-4xl mx-auto flex justify-between items-center py-3 border-b border-slate-850">
+        <div class="flex items-center gap-2">
+            <svg class="w-7 h-7 text-sky-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span class="font-extrabold text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">AERO<span class="text-white">QUEST</span></span>
+        </div>
+        <div class="text-[10px] md:text-xs text-slate-400 bg-slate-900/85 px-3 py-1.5 rounded-full border border-slate-800 flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+            Chế độ: Thực Chiến (10 câu)
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-grow flex items-center justify-center py-6 w-full">
+        <div class="w-full max-w-2xl">
+            
+            <!-- SCREEN 1: START SCREEN -->
+            <div id="start-screen" class="glass-card rounded-3xl p-6 md:p-10 shadow-2xl text-center border border-slate-800 transition-all duration-300">
+                <div class="inline-flex p-4 rounded-full bg-sky-500/10 text-sky-400 mb-5">
+                    <svg class="w-14 h-14" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                
+                <h1 class="text-2xl md:text-3xl font-extrabold mb-3 leading-tight text-white">
+                    Trở Thành <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-500">Cơ Trưởng AI</span> Phòng Vé
+                </h1>
+                <p class="text-slate-300 mb-6 max-w-md mx-auto text-xs md:text-sm leading-relaxed">
+                    Kiểm tra ngay khả năng tối ưu hóa công việc phòng vé bằng AI (ChatGPT/Gemini) của bạn thông qua 10 tình huống thực chiến. Bạn đã sẵn sàng cất cánh?
+                </p>
+
+                <div class="grid grid-cols-3 gap-3 mb-6 text-left max-w-lg mx-auto">
+                    <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-850 text-center">
+                        <span class="block text-lg md:text-xl font-bold text-sky-400">20s</span>
+                        <span class="text-[9px] text-slate-400 uppercase tracking-wider">Thời gian/Câu</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-850 text-center">
+                        <span class="block text-lg md:text-xl font-bold text-red-500">10</span>
+                        <span class="text-[9px] text-slate-400 uppercase tracking-wider">Tổng số câu</span>
+                    </div>
+                    <div class="bg-slate-900/60 p-3 rounded-xl border border-slate-850 text-center">
+                        <span class="block text-lg md:text-xl font-bold text-amber-400">4 Cấp</span>
+                        <span class="text-[9px] text-slate-400 uppercase tracking-wider">Huy hiệu</span>
+                    </div>
+                </div>
+
+                <div class="max-w-md mx-auto mb-6 text-left">
+                    <label for="player-name" class="block text-[11px] font-bold uppercase tracking-wider text-slate-300 mb-2 pl-1">Biệt danh cơ trưởng của bạn:</label>
+                    <input type="text" id="player-name" placeholder="Ví dụ: Cơ trưởng Leon..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 font-semibold focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all duration-200 shadow-inner text-base">
+                </div>
+
+                <button id="btn-start" class="w-full max-w-md bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-black py-3.5 px-8 rounded-xl shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300 transform hover:-translate-y-0.5 text-base md:text-lg tracking-wider uppercase glow-button">
+                    Khởi Động Động Cơ 🚀
+                </button>
+            </div>
+
+            <!-- SCREEN 2: PLAYING SCREEN -->
+            <div id="quiz-screen" class="glass-card rounded-3xl p-5 md:p-8 shadow-2xl border border-slate-800 transition-all duration-300 hidden">
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-[10px] font-bold text-sky-400 uppercase tracking-widest bg-sky-500/10 px-3 py-1 rounded-full" id="question-index">Câu 1 / 10</span>
+                    
+                    <div class="flex items-center gap-2 bg-slate-900 px-3 py-1 rounded-full border border-slate-800">
+                        <span class="text-[10px] uppercase text-slate-400 font-bold">Còn lại:</span>
+                        <span id="digital-timer" class="font-mono font-bold text-xs text-sky-400">20.0s</span>
+                    </div>
+
+                    <div class="text-right">
+                        <span class="text-[9px] text-slate-400 block uppercase font-semibold">Điểm số</span>
+                        <span class="font-extrabold text-base text-white" id="current-score">0</span>
+                    </div>
+                </div>
+
+                <div class="w-full bg-slate-950 h-2 rounded-full mb-4 overflow-hidden border border-slate-850">
+                    <div id="timer-progress" class="bg-gradient-to-r from-green-400 to-sky-400 h-full w-full transition-all duration-100 ease-linear"></div>
+                </div>
+
+                <div id="illustration-container" class="w-full h-40 md:h-48 bg-slate-950/90 rounded-2xl mb-4 border border-slate-900 flex items-center justify-center overflow-hidden p-1 shadow-inner">
+                    <!-- SVG Vector -->
+                </div>
+
+                <div class="mb-4">
+                    <h2 class="text-sm md:text-base font-extrabold text-white leading-snug min-h-[44px]" id="question-text">
+                        Đang tải dữ liệu câu hỏi...
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 gap-2.5" id="options-container">
+                    <!-- Options -->
+                </div>
+
+                <div id="feedback-box" class="mt-4 p-4 rounded-2xl hidden transition-all duration-300">
+                    <div class="flex gap-3">
+                        <div class="flex-shrink-0" id="feedback-icon"></div>
+                        <div class="flex-grow">
+                            <h4 class="font-bold text-xs md:text-sm mb-0.5" id="feedback-title">Chính xác!</h4>
+                            <p class="text-[11px] md:text-xs leading-relaxed text-slate-300" id="feedback-explanation">Lời giải chi tiết.</p>
+                        </div>
+                    </div>
+                    <button id="btn-next" class="mt-3.5 w-full bg-slate-850 hover:bg-slate-800 text-white font-bold py-2 px-4 rounded-xl text-xs border border-slate-700 transition-colors">
+                        Tiếp theo ➔
+                    </button>
+                </div>
+            </div>
+
+            <!-- SCREEN 3: END SCREEN / RESULTS -->
+            <div id="end-screen" class="glass-card rounded-3xl p-6 md:p-10 shadow-2xl text-center border border-slate-800 transition-all duration-300 hidden">
+                <span class="text-[10px] font-bold text-sky-400 uppercase tracking-widest bg-sky-500/10 px-3 py-1 rounded-full mb-4 inline-block">Hành trình kết thúc</span>
+                
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white mt-1 mb-1" id="end-player-name">Cơ Trưởng Leon</h2>
+                <div class="inline-block mt-1 px-4 py-1.5 bg-gradient-to-r from-sky-400 to-blue-600 text-white font-black text-xs rounded-full uppercase tracking-wider mb-6 shadow-md" id="badge-display">
+                    Cơ Trưởng AI Bậc Thầy
+                </div>
+
+                <div class="grid grid-cols-3 gap-3 max-w-md mx-auto mb-6">
+                    <div class="bg-slate-900/80 p-3 md:p-4 rounded-2xl border border-slate-850">
+                        <span class="text-[9px] text-slate-400 uppercase tracking-wider block mb-1">Tổng điểm</span>
+                        <span class="text-xl md:text-2xl font-black text-amber-400" id="final-score">0</span>
+                    </div>
+                    <div class="bg-slate-900/80 p-3 md:p-4 rounded-2xl border border-slate-850">
+                        <span class="text-[9px] text-slate-400 uppercase tracking-wider block mb-1">Chính xác</span>
+                        <span class="text-xl md:text-2xl font-black text-green-400" id="accuracy">0/10</span>
+                    </div>
+                    <div class="bg-slate-900/80 p-3 md:p-4 rounded-2xl border border-slate-850">
+                        <span class="text-[9px] text-slate-400 uppercase tracking-wider block mb-1">Thời gian TB</span>
+                        <span class="text-xl md:text-2xl font-black text-sky-400" id="avg-time">0s</span>
+                    </div>
+                </div>
+
+                <div class="max-w-md mx-auto bg-slate-900/40 border border-slate-850 rounded-2xl p-4 mb-6 text-left flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-full bg-slate-900 flex items-center justify-center flex-shrink-0 text-2xl shadow-md border border-slate-800" id="badge-emoji">
+                        👑
+                    </div>
+                    <div>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-wider font-bold">Nhận xét chuyên môn</p>
+                        <p class="text-xs md:text-sm text-slate-200 font-medium leading-relaxed mt-0.5" id="badge-description">Tuyệt vời!</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                    <button id="btn-restart" class="flex-1 bg-slate-900 hover:bg-slate-850 text-white font-bold py-3 px-6 rounded-xl border border-slate-800 transition-all text-xs md:text-sm">
+                        Bắt Đầu Chuyến Bay Mới 🔄
+                    </button>
+                    <button id="btn-share" class="flex-1 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-black py-3 px-6 rounded-xl shadow-lg transition-all text-xs md:text-sm flex items-center justify-center gap-2 glow-button uppercase">
+                        <span>Báo Cáo Thành Tích ✨</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 10.742l4.808-2.404m0 0a3 3 0 10-4.243-4.243 3 3 0 004.243 4.243zm0 5.016l-4.808-2.404m0 0a3 3 0 114.243 4.243 3 3 0 01-4.243-4.243z"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div id="share-toast" class="mt-4 text-[11px] text-green-400 font-bold hidden">
+                    Đã sao chép thành tích! Hãy khoe ngay với đồng nghiệp nhé! 🚀
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- AI Sandbox Floating Button -->
+    <button id="btn-ai-sandbox" class="fixed bottom-6 right-6 bg-gradient-to-r from-sky-500 to-blue-600 text-white p-4 rounded-full shadow-lg hover:shadow-blue-500/50 hover:scale-105 transition-all z-40 flex items-center justify-center group border border-sky-400/30">
+        <svg class="w-6 h-6 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 font-bold text-sm">Thực Hành AI ✨</span>
+    </button>
+
+    <!-- AI Sandbox Modal -->
+    <div id="ai-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <!-- Header -->
+            <div class="p-4 border-b border-slate-800 flex justify-between items-center bg-slate-800/50">
+                <h3 class="text-lg font-bold text-sky-400 flex items-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                    Trợ Lý Viết Content / CSKH
+                </h3>
+                <button id="btn-close-ai" class="text-slate-400 hover:text-white transition-colors p-1 rounded-lg hover:bg-slate-800">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <!-- Body -->
+            <div class="p-5 overflow-y-auto flex-grow flex flex-col gap-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-wider">Nhập tình huống hoặc văn bản cần xử lý:</label>
+                    <textarea id="ai-input" rows="3" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-3 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500 transition-colors" placeholder="Ví dụ: Khách hàng đang rất tức giận chửi bới vì chuyến bay delay 4 tiếng do thời tiết xấu..."></textarea>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <button class="btn-ai-action bg-slate-800 hover:bg-slate-700 text-sky-400 border border-slate-700 rounded-xl py-2.5 text-xs font-bold transition-all transform hover:-translate-y-0.5 shadow-md" data-type="eli5">Giải thích ELI5 ✨</button>
+                    <button class="btn-ai-action bg-slate-800 hover:bg-slate-700 text-green-400 border border-slate-700 rounded-xl py-2.5 text-xs font-bold transition-all transform hover:-translate-y-0.5 shadow-md" data-type="tldr">Tóm tắt TL;DR ✨</button>
+                    <button class="btn-ai-action bg-slate-800 hover:bg-slate-700 text-amber-400 border border-slate-700 rounded-xl py-2.5 text-xs font-bold transition-all transform hover:-translate-y-0.5 shadow-md" data-type="hear">Xử lý HEAR ✨</button>
+                </div>
+                <div class="flex-grow bg-slate-950 border border-slate-800 rounded-xl p-4 min-h-[180px] max-h-[350px] overflow-y-auto relative mt-2">
+                    <div id="ai-output" class="text-sm text-slate-300 leading-relaxed whitespace-pre-wrap font-medium">Kết quả phản hồi từ Gemini LLM sẽ hiển thị tại đây...</div>
+                    <div id="ai-loading" class="absolute inset-0 bg-slate-950/90 hidden flex-col items-center justify-center gap-3 z-10 rounded-xl">
+                        <svg class="w-8 h-8 text-sky-500 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        <span class="text-xs font-bold text-sky-400 animate-pulse tracking-wider">GEMINI ĐANG XỬ LÝ...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-slate-500 text-[10px] py-4 border-t border-slate-900/60 mt-6">
+        <p>© 2026 AeroQuest - Training AI Nội Bộ.</p>
+    </footer>
+
+    <!-- JS Logic & 10 Questions -->
+    <script>
+        const questions = [
+            {
+                q: "1. Khi nào nhân viên phòng vé NÊN sử dụng câu lệnh (prompt) 'ELI5' (Explain Like I'm 5) nhất?",
+                options: [
+                    "Khi soạn thảo tài liệu nghiệp vụ (SOP) phức tạp cho nhân viên mới",
+                    "Khi cần giải thích các thuật ngữ hàng không cho khách hàng bình thường, người lớn tuổi",
+                    "Khi trích dẫn các quy định kỹ thuật, pháp lý dài dòng để chứng minh",
+                    "Khi viết email giải trình nghiêm túc gửi cho đối tác tài chính"
+                ],
+                correct: 1,
+                explanation: "ELI5 giúp ép AI bỏ qua thuật ngữ chuyên ngành (như GDS, boarding, check-in), thay vào đó dùng ngôn ngữ bình dân, ẩn dụ sinh động như đang nói với một đứa trẻ, cực kỳ phù hợp khi tư vấn cho khách hàng không rành hàng không.",
+                svg: `
+                <svg viewBox="0 0 400 200" class="w-full h-full">
+                    <path d="M 120 40 L 280 40 L 230 110 L 230 160 L 170 160 L 170 110 Z" fill="#334155" stroke="#64748b" stroke-width="4"/>
+                    <text x="140" y="30" fill="#ef4444" font-size="12" font-weight="bold">THUẬT NGỮ KHÓ</text>
+                    <path d="M 200 120 V 180" stroke="#38bdf8" stroke-width="4" stroke-dasharray="5,5" class="animate-pulse"/>
+                    <rect x="180" y="170" width="40" height="40" rx="8" fill="#f59e0b" />
+                    <text x="189" y="196" fill="#0f172a" font-size="20" font-weight="900">ABC</text>
+                    <text x="25" y="35" fill="#38bdf8" font-size="11" font-weight="800">MẸO ELI5: ĐƠN GIẢN HÓA MỌI THỨ</text>
+                </svg>
+                `
+            },
+            {
+                q: "2. Theo tài liệu, thuật ngữ 'No-show' trong hàng không được AI giải thích theo môtíp ELI5 giống với tình huống thực tế nào dưới đây?",
+                options: [
+                    "Trễ giờ làm và bị trừ lương vào cuối tháng",
+                    "Đến xếp hàng mua vé xem phim nhưng lại được thông báo hết vé",
+                    "Đặt bàn tổ chức sinh nhật tại nhà hàng nhưng đến giờ hẹn lại không xuất hiện",
+                    "Mua hàng online qua mạng nhưng không bấm nhận hàng"
+                ],
+                correct: 2,
+                explanation: "AI sử dụng hình ảnh 'Đặt bàn nhà hàng nhưng không đến' để ẩn dụ cho hành động mua vé, hãng giữ ghế nhưng khách không ra sân bay. Cách này giúp khách hàng hiểu tại sao họ lại bị mất vé rẻ hoặc phải chịu phí phạt.",
+                svg: `
+                <svg viewBox="0 0 400 200" class="w-full h-full">
+                    <rect x="150" y="100" width="100" height="15" fill="#94a3b8" />
+                    <rect x="160" y="115" width="10" height="40" fill="#64748b" />
+                    <rect x="230" y="115" width="10" height="40" fill="#64748b" />
+                    <circle cx="200" cy="80" r="15" fill="#ef4444" />
+                    <path d="M 190 70 L 210 90 M 210 70 L 190 90" stroke="#fff" stroke-width="3" />
+                    <text x="140" y="180" fill="#f87171" font-size="12" font-weight="bold">BÀN TRỐNG / GHẾ TRỐNG</text>
+                    <text x="25" y="35" fill="#38bdf8" font-size="11" font-weight="800">VÍ DỤ ẨN DỤ CHO "NO-SHOW"</text>
+                </svg>
+                `
+            },
+            {
+                q: "3. Câu lệnh 'Step-by-step' (từng bước một) mang lại hiệu quả tốt nhất trong trường hợp nào?",
+                options: [
+                    "Tạo mồi câu giật gân, đánh vào tâm lý sợ bỏ lỡ cho bài viết Facebook",
+                    "Tóm tắt một chính sách dài 3 trang thành 4 gạch đầu dòng",
+                    "Phân tích các nhánh giả thuyết khi khách hàng phân vân chọn hạng vé",
+                    "Chia nhỏ một quy trình kỹ thuật (như check-in online) thành các bước tuần tự, dễ làm theo"
+                ],
+                correct: 3,
+                explanation: "Lệnh 'Step-by-step' ép AI không viết thành một đoạn văn dài dòng mà chia ra thành Bước 1, Bước 2, Bước 3... giúp người đọc (đặc biệt là người lớn tuổi) dễ theo dõi như một bảng checklist.",
+                svg: `
+                <svg viewBox="0 0 400 200" class="w-full h-full">
+                    <circle cx="150" cy="80" r="12" fill="#38bdf8" /> <text x="146" y="84" fill="#fff" font-size="10" font-weight="bold">1</text>
+                    <rect x="180" y="75" width="100" height="10" rx="5" fill="#475569" />
+                    <circle cx="150" cy="110" r="12" fill="#38bdf8" /> <text x="146" y="114" fill="#fff" font-size="10" font-weight="bold">2</text>
+                    <rect x="180" y="105" width="80" height="10" rx="5" fill="#475569" />
+                    <circle cx="150" cy="140" r="12" fill="#38bdf8" /> <text x="146" y="144" fill="#fff" font-size="10" font-weight="bold">3</text>
+                    <rect x="180" y="135" width="120" height="10" rx="5" fill="#475569" />
+                    <path d="M 150 92 L 150 98 M 150 122 L 150 128" stroke="#64748b" stroke-width="2" />
+                    <text x="25" y="35" fill="#38bdf8" font-size="11" font-weight="800">MẸO STEP-BY-STEP: CHIA NHỎ QUY TRÌNH</text>
+                </svg>
+                `
+            },
+            {
+                q: "4. Để tóm tắt siêu ngắn gọn một công văn thay đổi chính sách hành lý dài 3 trang thành vài gạch đầu dòng cốt lõi, bạn nên dùng lệnh nào?",
+                options: [
+                    "Hook-first",
+                    "Decision tree",
+                    "TL;DR",
+                    "Soap Opera Sequence"
+                ],
+                correct: 2,
+                explanation: "TL;DR viết tắt của 'Too long; didn't read' (Quá dài; không đọc). Khi thêm lệnh này trước một văn bản dài, AI sẽ tự động cô đọng lại thành những ý cốt lõi nhất để bạn nắm bắt trong vài giây.",
+                svg: `
+                <svg viewBox="0 0 400 200" class="w-full h-full">
+                    <rect x="80" y="60" width="80" height="100" fill="#1e293b" stroke="#64748b" stroke-width="2"/>
+                    <line x1="90" y1="70" x2="150" y2="70" stroke="#475569" stroke-width="2"/>
+                    <line x1="90" y1="80" x2="150" y2="80" stroke="#475569" stroke-width="2"/>
+                    <line x1="90" y1="90" x2="150" y2="90" stroke="#475569" stroke-width="2"/>
+                    <line x1="90" y1="100" x2="150" y2="100" stroke="#475569" stroke-width="2"/>
+                    
+                    <path d="M 180 110 L 220 110 L 210 100 M 220 110 L 210 120" fill="none" stroke="#38bdf8" stroke-width="4"/>
+                    
+                    <rect x="240" y="80" width="80" height="60" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+                    <circle cx="250" cy="95" r="3" fill="#10b981"/> <line x1="260" y1="95" x2="310" y2="95" stroke="#10b981" stroke-width="2"/>
+                    <circle cx="250" cy="115" r="3" fill="#10b981"/> <line x1="260" y1="115" x2="290" y2="115" stroke="#10b981" stroke-width="2"/>
+                    <text x="25" y="35" fill="#38bdf8" font-size="11" font-weight="800">MẸO TL;DR: TÓM TẮT SIÊU TỐC</text>
+                </svg>
+                `
+            },
+            {
+                q: "5. Khi khách hàng phân vân giữa vé hoàn/hủy được và vé giá rẻ cho chuyến đi mùa mưa bão, prompt nào giúp tạo ra luận điểm tư vấn sắc bén?",
+                options: [
+                    "WIIFM (What's in it for me)",
+                    "Decision tree (Cây quyết định)",
+                    "HEAR framework",
+                    "ELI5 (Explain Like I'm 5)"
+                ],
+                correct: 1,
+                explanation: "Decision tree yêu cầu AI phân tích các nhánh giả thuyết (Nếu... thì...). Ví dụ: Nếu lịch trình cố định -> Chọn vé rẻ. Nếu lịch họp có rủi ro bị hoãn do bão -> Chọn vé linh hoạt hoàn/hủy.",
+                svg: `
+                <svg viewBox="0 0 400 200" class="w-full h-full">
+                    <rect x="160" y="50" width="80" height="25" rx="5" fill="#3b82f6"/>
+                    <text x="200" y="66" fill="#fff" font-size="10" font-weight="bold" text-anchor="middle">LỰA CHỌN?</text>
+                    <path d="M 180 75 L 130 110" stroke="#64748b" stroke-width="2"/>
+                    <path d="M 220 75 L 270 110" stroke="#64748b" stroke-width="2"/>
+                    <rect x="90" y="110" width="80" height="25" rx="12" fill="#10b981"/>
+                    <rect x="230" y="110" width="80" height="25" rx="12" fill="#f59e0b"/>
+                    <text x="25" y="35" fill="#38bdf8" font-size="11" font-weight="800">MẸO DECISION TREE: PHÂN TÍCH NHÁNH</text>
+                </svg>
+                `
+            },
+            {
+                q: "6. Trong việc viết Content truyền thông (Facebook, Zalo), 'WIIFM' có nghĩa là gì?",
+                options: [
+                    "Tạo nhiều dòng tiêu đề khác nhau để làm A/B testing",
+                    "Đưa mồi câu giật gân lên đầu tiên để giữ chân người xem",
+                    "Dẹp bỏ quảng cáo tính năng khô khan, tập trung vào lợi ích trực tiếp mà khách nhận được",
+                    "Viết theo cấu trúc phim dài tập, cắt ngang để tạo sự tò mò"
+                ],
+                correct: 2,
+                explanation: "WIIFM (What's In It For Me - Khách hàng nhận được gì). Ví dụ thay vì nói về hạng cân 23kg hành lý (tính năng), hãy nhấn mạnh vào việc khách tha hồ mua sắm quà cáp mà không lo đóng cước phạt (lợi ích).",
+                svg: `
+                <svg viewBox="0 0 400 200" class="w-full h-full">
+                    <rect x="120" y="80" width="50" height="50" fill="#475569"/>
+                    <text x="145" y="150" fill="#94a3b8" font-size="10" font-weight="bold" text-anchor="middle">TÍNH NĂNG</text>
+                    
+                    <path d="M 190 105 L 210 105 L 200 95 Z" fill="#ef4444" transform="rotate(90 200 105)"/>
+                    
+                    <rect x="230" y="80" width="60" height="50" rx="8" fill="#f59e0b"/>
+                    <line x1="230" y1="95" x2="290" y2="95" stroke="#b45309" stroke-width="4"/>
+                    <line x1="260" y1="80" x2="260" y2="130" stroke="#b45309" stroke-width="4"/>
+                    <text x="260" y="150" fill="#f59e0b" font-size="10" font-weight="bold" text-anchor="middle">LỢI ÍCH THỰC TẾ!</text>
+                    <text x="25" y="35" fill="#38bdf8" font-size="11" font-weight="800">TƯ DUY WIIFM TRONG CONTENT</text>
+                </svg>
+                `
+            },
+            {
+                q: "7. Khung chuẩn quốc tế 'HEAR framework' dùng để AI xử lý khiếu nại của khách hàng (CSKH) bao gồm những bước nào?",
+                options: [
+                    "Help (Giúp đỡ) - Educate (Giáo dục) - Analyze (Phân tích) - Respond (Phản hồi)",
+                    "Hear (Nghe) - Empathize (Đồng cảm) - Apologize (Xin lỗi) - Resolve (Giải quyết)",
+                    "Hear (Nghe) - Evaluate (Đánh giá) - Act (Hành động) - Report (Báo cáo)",
+                    "Hi (Chào hỏi) - Explain (Trình bày) - Ask (Hỏi han) - Retain (Giữ chân)"
+                ],
+                correct: 1,
+                explanation: "HEAR là công thức vàng trong CSKH: Nghe khách nói - Đồng cảm với nỗi bực dọc của họ - Xin lỗi chân thành - Đưa ra phương án giải quyết ngay lập tức. Cực kỳ hiệu quả khi dùng prompt cho khách hàng đang giận dữ.",
+                svg: `
+                <svg viewBox="0 0 400 200" class="w-full h-full">
+                    <circle cx="100" cy="100" r="20" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+                    <text x="100" y="105" fill="#38bdf8" font-size="12" font-weight="bold" text-anchor="middle">H</text>
+                    <circle cx="160" cy="100" r="20" fill="#1e293b" stroke="#f43f5e" stroke-width="3"/>
+                    <text x="160" y="105" fill="#f43f5e" font-size="12" font-weight="bold" text-anchor="middle">E</text>
+                    <circle cx="220" cy="100" r="20" fill="#1e293b" stroke="#f59e0b" stroke-width="3"/>
+                    <text x="220" y="105" fill="#f59e0b" font-size="12" font-weight="bold" text-anchor="middle">A</text>
+                    <circle cx="280" cy="100" r="20" fill="#1e293b" stroke="#10b981" stroke-width="3"/>
+                    <text x="280" y="105" fill="#10b981" font-size="12" font-weight="bold" text-anchor="middle">R</text>
+                    <text x="25" y="35" fill="#38bdf8" font-size="11" font-weight="800">CSKH: HEAR FRAMEWORK</text>
+                </svg>
+                `
+            },
+            {
+                q: "8. Theo hướng dẫn thiết kế ảnh bằng AI Gemini, kỹ thuật quan trọng nhất để ảnh làm ra có thể dễ dàng chèn Typography (chữ) trên Canva là gì?",
+                options: [
+                    "Tạo hình ảnh có càng nhiều chi tiết và màu sắc nổi bật càng tốt",
+                    "Chừa khoảng trống (Negative Space) ở các vị trí thích hợp như bầu trời hoặc góc ảnh",
+                    "Luôn đặt chủ thể (như máy bay, con người) ngay chính giữa bức ảnh",
+                    "Sử dụng các gam màu đối lập mạnh để chữ tự động nổi bật"
+                ],
+                correct: 1,
+                explanation: "Nếu hình ảnh AI tạo ra quá rối rắm hoặc chật chội, bạn sẽ không có chỗ để chèn thông tin quảng cáo. Yêu cầu AI tạo Negative Space (khoảng trống tĩnh lặng) là chìa khóa để thiết kế poster chuyên nghiệp.",
+                svg: `
+                <svg viewBox="0 0 400 200" class="w-full h-full">
+                    <rect x="100" y="60" width="200" height="100" fill="#0f172a" stroke="#64748b" stroke-width="2"/>
+                    <circle cx="140" cy="110" r="30" fill="#475569"/>
+                    <rect x="200" y="70" width="90" height="80" fill="#38bdf8" opacity="0.2" stroke="#38bdf8" stroke-dasharray="4"/>
+                    <text x="245" y="115" fill="#38bdf8" font-size="10" font-weight="bold" text-anchor="middle">NƠI CHÈN CHỮ</text>
+                    <text x="25" y="35" fill="#38bdf8" font-size="11" font-weight="800">KỸ THUẬT NEGATIVE SPACE</text>
+                </svg>
+                `
+            },
+            {
+                q: "9. Dựa vào ví dụ trong file, để dùng AI tạo một ảnh hướng đến đối tượng 'Khách đi tour nghỉ dưỡng Free & Easy', chi tiết lệnh nào phù hợp nhất?",
+                options: [
+                    "Nhà ga sân bay sáng sủa, gia đình hạnh phúc chỉ tay ra đường băng",
+                    "Góc nhìn từ khoang hạng thương gia, bàn gỗ đặt hộ chiếu, tông màu xanh biển đậm",
+                    "Máy bay thương mại bay vút lên bầu trời hoàng hôn cam rực rỡ, địa danh mờ ảo",
+                    "Du khách thư giãn bên hồ bơi vô cực nhìn ra bãi biển, máy bay bay qua bầu trời xanh rộng"
+                ],
+                correct: 3,
+                explanation: "Tour Free & Easy chú trọng vào sự tự do, thảnh thơi tuyệt đối. Hình ảnh hồ bơi vô cực, bãi biển và bầu trời xanh trong vắt tạo cảm giác thư giãn cực độ, thúc đẩy mong muốn đặt tour của khách hàng.",
+                svg: `
+                <svg viewBox="0 0 400 200" class="w-full h-full">
+                    <rect x="100" y="60" width="200" height="60" fill="#0ea5e9"/>
+                    <rect x="100" y="120" width="200" height="40" fill="#38bdf8" opacity="0.6"/>
+                    <path d="M 120 70 L 140 65 L 145 75 Z" fill="#fff" />
+                    <rect x="250" y="140" width="30" height="10" rx="3" fill="#fbbf24"/>
+                    <text x="25" y="35" fill="#38bdf8" font-size="11" font-weight="800">PROMPT: TOUR FREE & EASY</text>
+                </svg>
+                `
+            },
+            {
+                q: "10. Kỹ thuật 'Soap Opera Sequence' (Chuỗi phim dài tập) trong việc viết Email Marketing ứng dụng như thế nào?",
+                options: [
+                    "Tập trung toàn bộ nội dung email vào một đường link duy nhất (One-clear-CTA)",
+                    "Viết 5 dòng tiêu đề khác nhau để gửi thử nghiệm cho 2 tệp khách hàng",
+                    "Kể chuyện có thắt nút, cắt ngang lúc gay cấn nhất (cliffhanger) để khách mong chờ mở email tiếp theo",
+                    "Hướng dẫn khách làm thủ tục hoàn vé thật ngắn gọn, bỏ qua các từ ngữ hành chính"
+                ],
+                correct: 2,
+                explanation: "Giống như phim truyền hình kết thúc tập lúc cao trào nhất, Soap Opera Sequence cắt ngang câu chuyện để kích thích sự tò mò cực độ, khiến khách hàng phải mở email của ngày hôm sau để xem diễn biến tiếp theo.",
+                svg: `
+                <svg viewBox="0 0 400 200" class="w-full h-full">
+                    <rect x="100" y="80" width="50" height="35" rx="4" fill="#334155" stroke="#64748b" stroke-width="2"/>
+                    <path d="M 100 80 L 125 100 L 150 80" stroke="#64748b" stroke-width="2" fill="none"/>
+                    
+                    <path d="M 160 95 L 240 95" stroke="#38bdf8" stroke-width="3" stroke-dasharray="6,4"/>
+                    
+                    <rect x="250" y="80" width="50" height="35" rx="4" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                    <path d="M 250 80 L 275 100 L 300 80" stroke="#38bdf8" stroke-width="2" fill="none"/>
+                    <text x="275" y="70" fill="#38bdf8" font-size="20" font-weight="bold" text-anchor="middle">?</text>
+                    <text x="25" y="35" fill="#38bdf8" font-size="11" font-weight="800">EMAIL: SOAP OPERA SEQUENCE</text>
+                </svg>
+                `
+            }
+        ];
+
+        // AUDIO SYNTHESIZER
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        function playSound(type) {
+            if (!audioCtx) return;
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            if (type === 'click') {
+                osc.frequency.setValueAtTime(440, audioCtx.currentTime); // A4
+                gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.05);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.05);
+            } else if (type === 'correct') {
+                osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+                osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.08); // E5
+                gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.25);
+            } else if (type === 'wrong') {
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(140, audioCtx.currentTime); 
+                osc.frequency.linearRampToValueAtTime(70, audioCtx.currentTime + 0.2); 
+                gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.25);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.25);
+            } else if (type === 'fanfare') {
+                const notes = [261.63, 329.63, 392.00, 523.25]; // C4-E4-G4-C5 chord
+                notes.forEach((freq, idx) => {
+                    const noteOsc = audioCtx.createOscillator();
+                    const noteGain = audioCtx.createGain();
+                    noteOsc.connect(noteGain);
+                    noteGain.connect(audioCtx.destination);
+                    noteOsc.frequency.setValueAtTime(freq, audioCtx.currentTime + idx * 0.08);
+                    noteGain.gain.setValueAtTime(0.08, audioCtx.currentTime + idx * 0.08);
+                    noteGain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + idx * 0.08 + 0.35);
+                    noteOsc.start(audioCtx.currentTime + idx * 0.08);
+                    noteOsc.stop(audioCtx.currentTime + idx * 0.08 + 0.35);
+                });
+            }
+        }
+
+        // GAME STATE
+        let currentQuestionIdx = 0;
+        let score = 0;
+        let correctAnswersCount = 0;
+        let timerInterval = null;
+        let timeLeft = 20; // 20 giây mỗi câu theo yêu cầu
+        const baseTimeLimit = 20; 
+        let answersTimes = []; 
+        let questionStartTime = 0;
+        let canAnswer = true;
+        let nickname = "";
+
+        // DOM Elements
+        const startScreen = document.getElementById("start-screen");
+        const quizScreen = document.getElementById("quiz-screen");
+        const endScreen = document.getElementById("end-screen");
+        
+        const btnStart = document.getElementById("btn-start");
+        const inputName = document.getElementById("player-name");
+        
+        const questionIndexText = document.getElementById("question-index");
+        const currentScoreText = document.getElementById("current-score");
+        const timerProgress = document.getElementById("timer-progress");
+        const digitalTimer = document.getElementById("digital-timer");
+        const illustrationContainer = document.getElementById("illustration-container");
+        const questionText = document.getElementById("question-text");
+        const optionsContainer = document.getElementById("options-container");
+        
+        const feedbackBox = document.getElementById("feedback-box");
+        const feedbackTitle = document.getElementById("feedback-title");
+        const feedbackExplanation = document.getElementById("feedback-explanation");
+        const feedbackIcon = document.getElementById("feedback-icon");
+        const btnNext = document.getElementById("btn-next");
+
+        const endPlayerName = document.getElementById("end-player-name");
+        const badgeDisplay = document.getElementById("badge-display");
+        const badgeEmoji = document.getElementById("badge-emoji");
+        const badgeDescription = document.getElementById("badge-description");
+        const finalScoreText = document.getElementById("final-score");
+        const accuracyText = document.getElementById("accuracy");
+        const avgTimeText = document.getElementById("avg-time");
+        const btnRestart = document.getElementById("btn-restart");
+        const btnShare = document.getElementById("btn-share");
+        const shareToast = document.getElementById("share-toast");
+
+        // GAME LOGIC
+        function startGame() {
+            playSound('click');
+            nickname = inputName.value.trim() || "Cơ trưởng ẩn danh";
+            currentQuestionIdx = 0;
+            score = 0;
+            correctAnswersCount = 0;
+            answersTimes = [];
+            canAnswer = true;
+            
+            startScreen.classList.add("hidden");
+            endScreen.classList.add("hidden");
+            quizScreen.classList.remove("hidden");
+
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            canAnswer = true;
+            feedbackBox.classList.add("hidden");
+            
+            const currentQuestion = questions[currentQuestionIdx];
+            questionIndexText.textContent = `Câu ${currentQuestionIdx + 1} / ${questions.length}`;
+            currentScoreText.textContent = score;
+            questionText.textContent = currentQuestion.q;
+
+            illustrationContainer.innerHTML = currentQuestion.svg || '';
+
+            optionsContainer.innerHTML = "";
+            currentQuestion.options.forEach((option, idx) => {
+                const btn = document.createElement("button");
+                btn.className = "w-full text-left bg-slate-900/90 hover:bg-slate-800 text-slate-100 p-3 rounded-2xl border border-slate-800 hover:border-slate-600 transition-all duration-200 text-xs md:text-sm font-semibold flex items-start gap-3 focus:outline-none focus:ring-2 focus:ring-sky-500/50 group";
+                btn.innerHTML = `
+                    <span class="flex-shrink-0 w-5 h-5 rounded-lg bg-slate-800 flex items-center justify-center border border-slate-700 group-hover:bg-sky-500 group-hover:text-white font-black text-[10px] uppercase transition-colors">${String.fromCharCode(65 + idx)}</span>
+                    <span class="flex-grow pt-0.5 leading-snug">${option}</span>
+                `;
+                btn.onclick = () => selectAnswer(idx);
+                optionsContainer.appendChild(btn);
+            });
+
+            timeLeft = baseTimeLimit;
+            updateTimerUI();
+            questionStartTime = Date.now();
+            
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                timeLeft -= 0.1;
+                if (timeLeft <= 0) {
+                    timeLeft = 0;
+                    clearInterval(timerInterval);
+                    timeOut();
+                }
+                updateTimerUI();
+            }, 100);
+        }
+
+        function updateTimerUI() {
+            const percentage = (timeLeft / baseTimeLimit) * 100;
+            timerProgress.style.width = `${percentage}%`;
+            
+            digitalTimer.textContent = `${timeLeft.toFixed(1)}s`;
+            
+            if (percentage < 25) {
+                timerProgress.className = "bg-gradient-to-r from-red-500 to-rose-600 h-full w-full transition-all duration-100 ease-linear";
+                digitalTimer.className = "font-mono font-bold text-xs text-red-500 animate-pulse";
+            } else if (percentage < 50) {
+                timerProgress.className = "bg-gradient-to-r from-orange-400 to-amber-500 h-full w-full transition-all duration-100 ease-linear";
+                digitalTimer.className = "font-mono font-bold text-xs text-orange-400";
+            } else {
+                timerProgress.className = "bg-gradient-to-r from-green-400 to-sky-400 h-full w-full transition-all duration-100 ease-linear";
+                digitalTimer.className = "font-mono font-bold text-xs text-sky-400";
+            }
+        }
+
+        function selectAnswer(selectedIndex) {
+            if (!canAnswer) return;
+            canAnswer = false;
+            clearInterval(timerInterval);
+
+            const elapsedSeconds = (Date.now() - questionStartTime) / 1000;
+            answersTimes.push(elapsedSeconds);
+
+            const currentQuestion = questions[currentQuestionIdx];
+            const isCorrect = selectedIndex === currentQuestion.correct;
+            
+            const buttons = optionsContainer.children;
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].disabled = true;
+                if (i === currentQuestion.correct) {
+                    buttons[i].classList.remove("bg-slate-900/90", "border-slate-800");
+                    buttons[i].classList.add("bg-green-500/20", "border-green-500", "text-green-200");
+                    buttons[i].querySelector("span").classList.add("bg-green-500", "text-slate-950", "border-green-500");
+                } else if (i === selectedIndex && !isCorrect) {
+                    buttons[i].classList.remove("bg-slate-900/90", "border-slate-800");
+                    buttons[i].classList.add("bg-red-500/20", "border-red-500", "text-red-200");
+                    buttons[i].querySelector("span").classList.add("bg-red-500", "text-white", "border-red-500");
+                }
+            }
+
+            if (isCorrect) {
+                playSound('correct');
+                const bonus = Math.round(timeLeft * 10);
+                const questionScore = 100 + bonus;
+                score += questionScore;
+                correctAnswersCount++;
+                showFeedback(true, `+${questionScore}đ (Tốc độ: ${elapsedSeconds.toFixed(1)}s)`, currentQuestion.explanation);
+            } else {
+                playSound('wrong');
+                showFeedback(false, "Sai mất rồi!", currentQuestion.explanation);
+            }
+        }
+
+        function timeOut() {
+            canAnswer = false;
+            answersTimes.push(baseTimeLimit);
+            
+            playSound('wrong');
+
+            const currentQuestion = questions[currentQuestionIdx];
+            const buttons = optionsContainer.children;
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].disabled = true;
+                if (i === currentQuestion.correct) {
+                    buttons[i].classList.remove("bg-slate-900/90", "border-slate-800");
+                    buttons[i].classList.add("bg-green-500/20", "border-green-500", "text-green-200");
+                }
+            }
+            showFeedback(false, "Hết thời gian! ⏰", currentQuestion.explanation);
+        }
+
+        function showFeedback(isCorrect, title, explanation) {
+            feedbackBox.classList.remove("hidden");
+            
+            if (isCorrect) {
+                feedbackBox.className = "mt-4 p-4 rounded-2xl bg-green-500/10 border border-green-500/20 transition-all duration-300";
+                feedbackTitle.className = "font-bold text-xs md:text-sm text-green-400 mb-0.5";
+                feedbackIcon.innerHTML = `
+                    <div class="w-7 h-7 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                `;
+            } else {
+                feedbackBox.className = "mt-4 p-4 rounded-2xl bg-red-500/10 border border-red-500/20 transition-all duration-300";
+                feedbackTitle.className = "font-bold text-xs md:text-sm text-red-400 mb-0.5";
+                feedbackIcon.innerHTML = `
+                    <div class="w-7 h-7 rounded-full bg-red-500/20 flex items-center justify-center text-red-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </div>
+                `;
+            }
+            
+            feedbackTitle.textContent = title;
+            feedbackExplanation.textContent = explanation;
+
+            if (currentQuestionIdx === questions.length - 1) {
+                btnNext.textContent = "Hạ cánh xem kết quả ➔";
+            } else {
+                btnNext.textContent = "Câu tiếp theo ➔";
+            }
+        }
+
+        btnNext.onclick = () => {
+            playSound('click');
+            if (currentQuestionIdx < questions.length - 1) {
+                currentQuestionIdx++;
+                loadQuestion();
+            } else {
+                endGame();
+            }
+        };
+
+        function endGame() {
+            clearInterval(timerInterval);
+            playSound('fanfare');
+            quizScreen.classList.add("hidden");
+            endScreen.classList.remove("hidden");
+
+            const averageTime = answersTimes.length > 0 ? answersTimes.reduce((a, b) => a + b, 0) / answersTimes.length : 0;
+            
+            endPlayerName.textContent = nickname;
+            finalScoreText.textContent = score;
+            accuracyText.textContent = `${correctAnswersCount}/${questions.length}`;
+            avgTimeText.textContent = `${averageTime.toFixed(1)}s`;
+
+            let badgeName = "";
+            let emoji = "";
+            let description = "";
+
+            if (correctAnswersCount <= 3) {
+                badgeName = "Thực Tập Sinh Phòng Vé";
+                emoji = "🔰";
+                description = "Bạn mới làm quen với việc ứng dụng AI vào công việc. Hãy xem lại tài liệu các lệnh như ELI5, TL;DR để tối ưu thời gian hơn nhé!";
+            } else if (correctAnswersCount <= 6) {
+                badgeName = "Chuyên Viên Triển Vọng";
+                emoji = "✈️";
+                description = "Bạn đã có nền tảng tốt về cách giao tiếp với ChatGPT/Gemini. Trau dồi thêm một chút về thiết kế Negative Space và Email Marketing nhé!";
+            } else if (correctAnswersCount <= 8) {
+                badgeName = "Cao Thủ Bán Vé AI";
+                emoji = "🤖";
+                description = "Rất ấn tượng! Khả năng ứng dụng AI vào viết Content và chăm sóc khách hàng của bạn cực kỳ sắc bén.";
+            } else {
+                badgeName = "Cơ Trưởng AI Bậc Thầy";
+                emoji = "👑";
+                description = "Xuất sắc! Bạn hoàn toàn nắm vững và làm chủ công nghệ AI trong mọi khâu từ Marketing đến Xử lý khiếu nại (HEAR). Bạn sinh ra để dẫn dắt đội ngũ!";
+            }
+
+            badgeDisplay.textContent = badgeName;
+            badgeEmoji.textContent = emoji;
+            badgeDescription.textContent = description;
+        }
+
+        btnShare.onclick = () => {
+            playSound('click');
+            const shareText = `🚀 THỬ THÁCH AEROQUEST: TRAINING AI NỘI BỘ 🚀
+Tôi vừa hoàn thành chuyến bay thử nghiệm và đạt danh hiệu "${badgeDisplay.textContent}" (${correctAnswersCount}/10 câu đúng).
+Tổng điểm: ${score} - Phản xạ trung bình: ${avgTimeText.textContent}.
+Đồng nghiệp nào tự tin am hiểu ChatGPT/Gemini phòng vé hơn tôi thì nhào vô nha! ✈️🤖`;
+            
+            const el = document.createElement('textarea');
+            el.value = shareText;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+
+            shareToast.classList.remove("hidden");
+            setTimeout(() => {
+                shareToast.classList.add("hidden");
+            }, 4000);
+        };
+
+        btnRestart.onclick = () => {
+            startGame();
+        };
+
+        btnStart.onclick = () => {
+            startGame();
+        };
+
+        inputName.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                btnStart.click();
+            }
+        });
+
+        // ================= GEMINI API INTEGRATION =================
+        const apiKey = ""; // API key will be injected by the runtime environment
+        
+        const aiModal = document.getElementById('ai-modal');
+        const btnAiSandbox = document.getElementById('btn-ai-sandbox');
+        const btnCloseAi = document.getElementById('btn-close-ai');
+        const aiInput = document.getElementById('ai-input');
+        const aiOutput = document.getElementById('ai-output');
+        const aiLoading = document.getElementById('ai-loading');
+        const aiActions = document.querySelectorAll('.btn-ai-action');
+
+        // Toggle Modal Logic
+        btnAiSandbox.addEventListener('click', () => {
+            aiModal.classList.remove('hidden');
+            setTimeout(() => aiModal.classList.remove('opacity-0'), 10);
+        });
+
+        btnCloseAi.addEventListener('click', () => {
+            aiModal.classList.add('opacity-0');
+            setTimeout(() => aiModal.classList.add('hidden'), 300);
+        });
+
+        // Basic formatting for Markdown to HTML
+        function formatOutput(text) {
+            return text
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>')
+                .replace(/\*(.*?)\*/g, '<em class="text-slate-200">$1</em>')
+                .replace(/\n/g, '<br>');
+        }
+
+        // Gemini API Call with Exponential Backoff
+        async function callGeminiAPI(prompt, retries = 5, delay = 1000) {
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const payload = {
+                contents: [{ parts: [{ text: prompt }] }]
+            };
+            
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
+                return data.candidates?.[0]?.content?.parts?.[0]?.text || "Không có phản hồi từ AI.";
+            } catch (error) {
+                if (retries > 0) {
+                    await new Promise(res => setTimeout(res, delay));
+                    return callGeminiAPI(prompt, retries - 1, delay * 2);
+                }
+                return "Đã xảy ra lỗi khi kết nối với Gemini AI. Vui lòng thử lại sau!";
+            }
+        }
+
+        // Action Buttons Logic
+        aiActions.forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const text = aiInput.value.trim();
+                if (!text) {
+                    aiOutput.innerHTML = '<span class="text-amber-400">⚠️ Vui lòng nhập văn bản hoặc tình huống vào ô trống trước khi gọi AI.</span>';
+                    return;
+                }
+
+                const type = btn.dataset.type;
+                let prompt = "";
+                
+                // Construct prompts based on the selected training framework
+                if (type === 'eli5') {
+                    prompt = `Bạn là chuyên gia đào tạo ngành vé máy bay. Hãy dùng kỹ thuật ELI5 (Explain Like I'm 5) để giải thích khái niệm hoặc đoạn văn bản sau cho hành khách một cách bình dân, đơn giản nhất, sử dụng ẩn dụ sinh động dễ hiểu.\n\nVăn bản: "${text}"`;
+                } else if (type === 'tldr') {
+                    prompt = `Bạn là trợ lý AI thông minh. Hãy dùng kỹ thuật TL;DR để tóm tắt văn bản hoặc chính sách dài dòng sau thành 3-4 gạch đầu dòng siêu ngắn gọn, chỉ giữ lại ý cốt lõi nhất.\n\nVăn bản: "${text}"`;
+                } else if (type === 'hear') {
+                    prompt = `Bạn là chuyên viên Chăm Sóc Khách Hàng hãng hàng không. Hành khách đang khiếu nại hoặc giận dữ về vấn đề sau: "${text}".\n\nHãy áp dụng khung chuẩn quốc tế HEAR (Hear, Empathize, Apologize, Resolve) để viết một mẫu tin nhắn phản hồi xoa dịu và hướng dẫn giải quyết. Yêu cầu: Không giải thích công thức, chỉ đóng vai và viết nội dung tin nhắn gửi khách hàng.`;
+                }
+
+                // Show Loading
+                aiLoading.classList.remove('hidden');
+                aiLoading.classList.add('flex');
+                
+                // Fetch AI Response
+                const result = await callGeminiAPI(prompt);
+                
+                // Display Result
+                aiOutput.innerHTML = formatOutput(result);
+                
+                // Hide Loading
+                aiLoading.classList.add('hidden');
+                aiLoading.classList.remove('flex');
+            });
+        });
+
+    </script>
+</body>
+</html>
